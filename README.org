@@ -10,17 +10,17 @@ stick. In fact this program was mostly developed as a fun project
 for myself and is not really intended to be used seriously.
 
 Usage:
-#+BEGIN_SRC sh
+#+BEGIN_EXAMPLE
 moviespy <source> <destination>
 moviespy (-h | --help)
 moviespy --version
-#+END_SRC
+#+END_EXAMPLE
 
 Options:
-#+BEGIN_SRC sh
+#+BEGIN_EXAMPLE
 -h --help     Show this screen.
 --version     Show version.
-#+END_SRC
+#+END_EXAMPLE
 
 ** Planned features
 
