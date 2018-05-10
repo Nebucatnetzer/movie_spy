@@ -1,4 +1,4 @@
-* movie_spy
+* moviespy
 
 Movie Spy Is a program to quickly collect all personal information
 from a computer. Ideally run from a live USB stick. The name comes
