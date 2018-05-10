@@ -1,0 +1,30 @@
+* movie_spy
+
+Movie Spy Is a program to quickly collect all personal information
+from a computer. Ideally run from a live USB stick. The name comes
+from the fact that in movies spies can just quickly insert a USB key
+and get all the important data.
+
+As of now it doesn't start automatically when you plug in an USB
+stick. In fact this program was mostly developed as a fun project
+for myself and is not really intended to be used seriously.
+
+Usage:
+#+BEGIN_EXAMPLE
+moviespy <source> <destination>
+moviespy (-h | --help)
+moviespy --version
+#+END_EXAMPLE
+
+Options:
+#+BEGIN_EXAMPLE
+-h --help     Show this screen.
+--version     Show version.
+#+END_EXAMPLE
+
+** TODO
+
+- As of now the program just overwrites files with the same name. I
+  would like to insert a check if the files are the same and when they
+  aren't the same append a an increasing number. This way less files
+  should get lost.
