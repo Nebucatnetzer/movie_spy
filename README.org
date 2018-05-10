@@ -10,19 +10,19 @@ stick. In fact this program was mostly developed as a fun project
 for myself and is not really intended to be used seriously.
 
 Usage:
-#+BEGIN_EXAMPLE
+#+BEGIN_SRC sh
 moviespy <source> <destination>
 moviespy (-h | --help)
 moviespy --version
-#+END_EXAMPLE
+#+END_SRC
 
 Options:
-#+BEGIN_EXAMPLE
+#+BEGIN_SRC sh
 -h --help     Show this screen.
 --version     Show version.
-#+END_EXAMPLE
+#+END_SRC
 
-** TODO
+** Planned features
 
 - As of now the program just overwrites files with the same name. I
   would like to insert a check if the files are the same and when they
