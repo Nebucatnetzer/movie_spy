@@ -21,6 +21,7 @@ Options:
 import os
 import fnmatch
 from shutil import copy2
+import filecmp
 import time
 
 from docopt import docopt
@@ -63,17 +64,32 @@ def copy_files(extensions, search_path, dest):
 
     for file_type, files_by_type in path_dictionary.items():
         if files_by_type:
-            path = os.path.join(dest, file_type)
-            if not os.path.exists(path):
-                os.makedirs(path)
+            target_path = os.path.join(dest, file_type)
+            if not os.path.exists(target_path):
+                os.makedirs(target_path)
 
-        for file in files_by_type.items():
-            if not os.path.islink(file):
-                try:
-                    copy2(file, path)
-                except Exception as e:
-                    print(e)
+        for source_path, file_name in files_by_type.items():
+            if os.path.islink(source_path):
+                continue
+
+            target_file = os.path.join(target_path, file_name)
+            counter = 1
+            if os.path.exists(target_file):
+                if not filecmp.cmp(target_file, source_path):
+                    split_file_name = file_name.split('.')
+                    new_file_name = (split_file_name[0],
+                                     "-" + str(counter),
+                                     ".",
+                                     split_file_name[1])
+                    s = ""
+                    file_name = s.join(new_file_name)
+                    target_file = os.path.join(target_path, file_name)
+                    counter += 1
+                    copy2(source_path, target_file)
+                else:
                     continue
+            else:
+                copy2(source_path, target_file)
 
 
 def sort_jpgs(location):
