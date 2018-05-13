@@ -21,6 +21,7 @@ Options:
 import os
 import fnmatch
 from shutil import copy2
+import time
 
 from docopt import docopt
 import jpgSorter
@@ -82,6 +83,7 @@ def sort_jpgs(location):
 
 
 if __name__ == '__main__':
+    start_time = time.time()
     arguments = docopt(__doc__, version='Movie Spy v1.0')
     source = arguments['<source>']
     destination = arguments['<destination>']
@@ -96,6 +98,8 @@ if __name__ == '__main__':
 
     max_files_per_folder.limitFilesPerFolder(destination,
                                              maxNumberOfFilesPerFolder)
+
+    print("--- %s seconds ---" % (time.time() - start_time))
 
 
 
