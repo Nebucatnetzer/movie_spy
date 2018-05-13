@@ -28,6 +28,9 @@ Options:
   would like to insert a check if the files are the same and when they
   aren't the same append a an increasing number. This way less files
   should get lost.
+  [2018-05-13 So]
+  As of this date a very rough duplicate check has been integrated. I
+  don't think it's very reliable however.
 
 ** Credits
 
